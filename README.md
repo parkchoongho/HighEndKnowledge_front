@@ -1,68 +1,95 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 스토리 라인(기능 명세)
 
-## Available Scripts
+1. 메인 페이지
+   * 하이에나 사진 페이지 이 후 로그인 화면
+   * ID/PW 입력창. 그 아래 회원가입 버튼
+2. 회원가입
+   - ID, 이름, PW 입력창
+   - 성별, 나이 선택창
+   - ID 중복 확인
+   - PW 유효성 검사
+   - 회원가입 성공 후 자동 로그인
+3. 로그인
+   - ID/PW 입력 창
+   - ID/PW 불일치 시 화면 표기
+   - 성공시 랜딩페이지
+4. 랜딩페이지
+   - 현 위치 지도 보임
+   - 지도에 핀으로 퀴즈 표시
+   - 하단 좌측 Home 버튼. Home은 랜딩페이지로 이동
+   - 하단 우측 MyPage 버튼. MyPage로 이동
+   - 하단 중앙 발바닥 아이콘. 기능은??
+   - 지도의 퀴즈 핀 선택 시 퀴즈 페이지로 이동
+   - 최하단 좌측 Home버튼 점등 (색 미정)
+5. 퀴즈 페이지
+   - 최상단 퀴즈 Title
+   - 문제 Title
+   - 문제 본문
+   - 선택지 (4지 선다)
+   - 최하단 중앙 발바닥 아이콘 점등!
+6. 정답 페이지
+   - 최상단 정답 Title
+   - 중앙 정답임을 표시
+   - 최하단 중앙 X 아이콘으로 변경
+   - X 아이콘 선택시 랜딩페이지로 이동
+7. 오답 페이지
+   - 최상단 오답 Title
+   - 약오르는 이미지/이모티콘으로 오답 표시
+   - 하단 중앙 X 아이콘으로 변경
+   - X 아이콘 선택시 랜딩페이지로 이동
+8. 마이 페이지
+   - 최상단 MyPage Title
+   - 상단 좌측 프로필 사진
+   - 상단 우측 ID, Class 표시
+   - 중앙 Class Exp 표시
+   - 하단 풀었던 문제 Card 표시
+   - Card에는 퀴즈 Title 표시
+   - Card 선택시 퀴즈 페이지로 이동
+   - 최하단 우측 Mypage 버튼 점등(색 미정)
+9. Admin 페이지
+   - 퀴즈 리스트 출력
+   - 퀴즈 만들기 버튼
+   - 퀴즈 선택시 퀴즈 수정페이지
+10. 퀴즈 등록 페이지
+    - 퀴즈 Title, 문제 Title, 문제 본문 입력창
+    - 선택지 입력창 (4문항)
+    - 퀴즈 배경화면 등록 버튼
+    - 퀴즈 제출 버튼
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# API 문서
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+| 구분                                  | url  | method | parameter | response |
+| ------------------------------------- | ---- | ------ | --------- | -------- |
+| 로그인 페이지(Mainpage)               |      | GET    |           |          |
+| 로그인 버튼 선택                      |      | POST   |           |          |
+| 회원가입 버튼 선택                    |      | GET    |           |          |
+| 회원가입 페이지                       |      | GET    |           |          |
+| ID 중복체크                           |      | GET    |           |          |
+| 회원가입 완료 선택                    |      | POST   |           |          |
+| 랜딩 페이지                           |      | GET    |           |          |
+| 퀴즈 핀 선택                          |      | POST   |           |          |
+| 퀴즈 페이지                           |      | GET    |           |          |
+| 정답 선택                             |      | POST   |           |          |
+| 정답 페이지                           |      | GET    |           |          |
+| 오답 선택                             |      | POST   |           |          |
+| 오답 페이지                           |      | GET    |           |          |
+| 랜딩 페이지 선택<br />(발바닥 아이콘) |      | GET    |           |          |
+| 마이 페이지 선택                      |      | POST   |           |          |
+| 마이 페이지                           |      | GET    |           |          |
+| 개인정보 수정 선택                    |      | POST   |           |          |
+| 개인정보 수정 페이지                  |      | GET    |           |          |
+| 풀었던 퀴즈 선택                      |      | GET    |           |          |
+|                                       |      |        |           |          |
+| Admin 페이지                          |      | GET    |           |          |
+| 퀴즈 수정 페이지                      |      | GET    |           |          |
+| 퀴즈 수정 버튼                        |      | POST   |           |          |
+| 퀴즈 등록 페이지                      |      | GET    |           |          |
+| 퀴즈 배경화면 버튼                    |      |        |           |          |
+| 퀴즈 등록 버튼                        |      | POST   |           |          |
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+# DB 구조
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
