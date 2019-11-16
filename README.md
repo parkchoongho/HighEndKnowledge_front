@@ -1,8 +1,10 @@
 # 스토리 라인(기능 명세)
 
+## App(Flutter)
+
 1. 메인 페이지
-   * 하이에나 사진 페이지 이 후 로그인 화면
-   * ID/PW 입력창. 그 아래 회원가입 버튼
+   - 하이에나 사진 페이지 이 후 로그인 화면
+   - ID/PW 입력창. 그 아래 회원가입 버튼
 2. 회원가입
    - ID, 이름, PW 입력창
    - 성별, 나이 선택창
@@ -46,50 +48,70 @@
    - Card에는 퀴즈 Title 표시
    - Card 선택시 퀴즈 페이지로 이동
    - 최하단 우측 Mypage 버튼 점등(색 미정)
-9. Admin 페이지
+
+## Front (Web)
+
+1. Admin 페이지
    - 퀴즈 리스트 출력
    - 퀴즈 만들기 버튼
    - 퀴즈 선택시 퀴즈 수정페이지
-10. 퀴즈 등록 페이지
-    - 퀴즈 Title, 문제 Title, 문제 본문 입력창
-    - 선택지 입력창 (4문항)
-    - 퀴즈 배경화면 등록 버튼
-    - 퀴즈 제출 버튼
-
-
+2. 퀴즈 등록 페이지
+   - 퀴즈 Title, 문제 Title, 문제 본문 입력창
+   - 선택지 입력창 (4문항)
+   - 퀴즈 배경화면 등록 버튼
+   - 퀴즈 제출 버튼
 
 # API 문서
 
-| 구분                                  | url  | method | parameter | response |
-| ------------------------------------- | ---- | ------ | --------- | -------- |
-| 로그인 페이지(Mainpage)               |      | GET    |           |          |
-| 로그인 버튼 선택                      |      | POST   |           |          |
-| 회원가입 버튼 선택                    |      | GET    |           |          |
-| 회원가입 페이지                       |      | GET    |           |          |
-| ID 중복체크                           |      | GET    |           |          |
-| 회원가입 완료 선택                    |      | POST   |           |          |
-| 랜딩 페이지                           |      | GET    |           |          |
-| 퀴즈 핀 선택                          |      | POST   |           |          |
-| 퀴즈 페이지                           |      | GET    |           |          |
-| 정답 선택                             |      | POST   |           |          |
-| 정답 페이지                           |      | GET    |           |          |
-| 오답 선택                             |      | POST   |           |          |
-| 오답 페이지                           |      | GET    |           |          |
-| 랜딩 페이지 선택<br />(발바닥 아이콘) |      | GET    |           |          |
-| 마이 페이지 선택                      |      | POST   |           |          |
-| 마이 페이지                           |      | GET    |           |          |
-| 개인정보 수정 선택                    |      | POST   |           |          |
-| 개인정보 수정 페이지                  |      | GET    |           |          |
-| 풀었던 퀴즈 선택                      |      | GET    |           |          |
-|                                       |      |        |           |          |
-| Admin 페이지                          |      | GET    |           |          |
-| 퀴즈 수정 페이지                      |      | GET    |           |          |
-| 퀴즈 수정 버튼                        |      | POST   |           |          |
-| 퀴즈 등록 페이지                      |      | GET    |           |          |
-| 퀴즈 배경화면 버튼                    |      |        |           |          |
-| 퀴즈 등록 버튼                        |      | POST   |           |          |
+## App(Flutter)
 
+| 구분                                  | url               | method | parameter                            | response      |
+| ------------------------------------- | ----------------- | ------ | ------------------------------------ | ------------- |
+| 로그인 페이지(Mainpage)               |                   | GET    |                                      |               |
+| 로그인 요청                           | /auth/login       | POST   | id, password                         | result, token |
+| 회원가입 버튼 선택                    |                   | GET    |                                      | Result        |
+| 회원가입 페이지                       |                   | GET    |                                      | Result        |
+| ID 중복체크                           | /auth/idcheck     | GET    | id                                   | Result        |
+| 회원가입  요청                        | /auth/join        | POST   | id, password, name, gender, birthday | result        |
+| 랜딩 페이지                           |                   | GET    |                                      | Result        |
+| 퀴즈 핀 선택                          | /api/quiz/:pin_id | GET    | pin_id                               | Result        |
+| 퀴즈 페이지                           |                   | GET    |                                      | Result        |
+| 문항 선택                             | /api/quiz/choice  | POST   | choice_number, token                 | Result        |
+| 정답 페이지                           |                   | GET    |                                      | Result        |
+| 오답 페이지                           |                   | GET    |                                      | Result        |
+| 랜딩 페이지 선택<br />(발바닥 아이콘) |                   | GET    |                                      | Result        |
+| 마이 페이지 선택                      | /api/my/page      | GET    | token                                | Result        |
+| 마이 페이지                           |                   | GET    |                                      | Result        |
+| 개인정보 페이지 선택                  | /api/my/info      | GET    | Token                                | Result        |
+| 개인정보 페이지                       |                   | GET    |                                      | result        |
+| 개인정보 수정 선택                    | /api/my/info      | PATCH  | password, name                       | Result        |
+| 풀었던 퀴즈 선택                      |                   | GET    |                                      | result        |
 
+## Front (Web)
+
+| 구분               | url           | method | parameter                                                  | response                    |
+| ------------------ | ------------- | ------ | ---------------------------------------------------------- | --------------------------- |
+| Admin 페이지       | /admin        | GET    |                                                            | Result, Pin_id, title, tags |
+| 퀴즈 수정 페이지   | /admin/modify | GET    | Pin_id                                                     | Result                      |
+| 퀴즈 수정 버튼     | /admin/modify | POST   | Pin_id, title, contents, answer, tags, latitude, longitude | Result                      |
+| 퀴즈 등록 페이지   | /admin/quiz   | GET    |                                                            | Result                      |
+| 퀴즈 배경화면 버튼 |               |        |                                                            | Result                      |
+| 퀴즈 등록 버튼     | /admin/quiz   | POST   | Pin_id, title, contents, answer, tags, latitude, longitude | Result                      |
 
 # DB 구조
 
+* users
+  * id
+  * password
+  * name
+  * birth
+  * gender
+  * Complete_quizs: Array(Pin_id)
+* quizs
+  * Pin_id
+  * Title
+  * Contents
+  * Answer
+  * Tags
+  * Latitude
+  * Logitude
