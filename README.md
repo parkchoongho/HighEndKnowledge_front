@@ -64,6 +64,7 @@
 # API 문서
 
 ## App(Flutter)
+<<<<<<< HEAD
 
 | 구분                                  | url | method | parameter | response |
 | ------------------------------------- | --- | ------ | --------- | -------- |
@@ -88,6 +89,41 @@
 | 풀었던 퀴즈 선택                      |     | GET    |           |          |
 
 ## Front (Web)
+=======
+
+| 구분                                  | url               | method | parameter                            | response      |
+| ------------------------------------- | ----------------- | ------ | ------------------------------------ | ------------- |
+| 로그인 페이지(Mainpage)               |                   | GET    |                                      |               |
+| 로그인 요청                           | /auth/login       | POST   | id, password                         | result, token |
+| 회원가입 버튼 선택                    |                   | GET    |                                      | Result        |
+| 회원가입 페이지                       |                   | GET    |                                      | Result        |
+| ID 중복체크                           | /auth/idcheck     | GET    | id                                   | Result        |
+| 회원가입  요청                        | /auth/join        | POST   | id, password, name, gender, birthday | result        |
+| 랜딩 페이지                           |                   | GET    |                                      | Result        |
+| 퀴즈 핀 선택                          | /api/quiz/:pin_id | GET    | pin_id                               | Result        |
+| 퀴즈 페이지                           |                   | GET    |                                      | Result        |
+| 문항 선택                             | /api/quiz/choice  | POST   | choice_number, token                 | Result        |
+| 정답 페이지                           |                   | GET    |                                      | Result        |
+| 오답 페이지                           |                   | GET    |                                      | Result        |
+| 랜딩 페이지 선택<br />(발바닥 아이콘) |                   | GET    |                                      | Result        |
+| 마이 페이지 선택                      | /api/my/page      | GET    | token                                | Result        |
+| 마이 페이지                           |                   | GET    |                                      | Result        |
+| 개인정보 페이지 선택                  | /api/my/info      | GET    | Token                                | Result        |
+| 개인정보 페이지                       |                   | GET    |                                      | result        |
+| 개인정보 수정 선택                    | /api/my/info      | PATCH  | password, name                       | Result        |
+| 풀었던 퀴즈 선택                      |                   | GET    |                                      | result        |
+
+## Front (Web)
+
+| 구분               | url           | method | parameter                                                  | response                    |
+| ------------------ | ------------- | ------ | ---------------------------------------------------------- | --------------------------- |
+| Admin 페이지       | /admin        | GET    |                                                            | Result, Pin_id, title, tags |
+| 퀴즈 수정 페이지   | /admin/modify | GET    | Pin_id                                                     | Result                      |
+| 퀴즈 수정 버튼     | /admin/modify | POST   | Pin_id, title, contents, answer, tags, latitude, longitude | Result                      |
+| 퀴즈 등록 페이지   | /admin/quiz   | GET    |                                                            | Result                      |
+| 퀴즈 배경화면 버튼 |               |        |                                                            | Result                      |
+| 퀴즈 등록 버튼     | /admin/quiz   | POST   | Pin_id, title, contents, answer, tags, latitude, longitude | Result                      |
+>>>>>>> fb0b3446d7ffbbde19f1212c34dc599a91cf2deb
 
 | 구분               | url | method | parameter | response |
 | ------------------ | --- | ------ | --------- | -------- |
@@ -98,4 +134,22 @@
 | 퀴즈 배경화면 버튼 |     |        |           |          |
 | 퀴즈 등록 버튼     |     | POST   |           |          |
 
+<<<<<<< HEAD
 # DB 구조
+=======
+* users
+  * id
+  * password
+  * name
+  * birth
+  * gender
+  * Complete_quizs: Array(Pin_id)
+* quizs
+  * Pin_id
+  * Title
+  * Contents
+  * Answer
+  * Tags
+  * Latitude
+  * Logitude
+>>>>>>> fb0b3446d7ffbbde19f1212c34dc599a91cf2deb
