@@ -64,6 +64,32 @@
 # API 문서
 
 ## App(Flutter)
+<<<<<<< HEAD
+
+| 구분                                  | url | method | parameter | response |
+| ------------------------------------- | --- | ------ | --------- | -------- |
+| 로그인 페이지(Mainpage)               |     | GET    |           |          |
+| 로그인 버튼 선택                      |     | POST   |           |          |
+| 회원가입 버튼 선택                    |     | GET    |           |          |
+| 회원가입 페이지                       |     | GET    |           |          |
+| ID 중복체크                           |     | GET    |           |          |
+| 회원가입 완료 선택                    |     | POST   |           |          |
+| 랜딩 페이지                           |     | GET    |           |          |
+| 퀴즈 핀 선택                          |     | POST   |           |          |
+| 퀴즈 페이지                           |     | GET    |           |          |
+| 정답 선택                             |     | POST   |           |          |
+| 정답 페이지                           |     | GET    |           |          |
+| 오답 선택                             |     | POST   |           |          |
+| 오답 페이지                           |     | GET    |           |          |
+| 랜딩 페이지 선택<br />(발바닥 아이콘) |     | GET    |           |          |
+| 마이 페이지 선택                      |     | POST   |           |          |
+| 마이 페이지                           |     | GET    |           |          |
+| 개인정보 수정 선택                    |     | POST   |           |          |
+| 개인정보 수정 페이지                  |     | GET    |           |          |
+| 풀었던 퀴즈 선택                      |     | GET    |           |          |
+
+## Front (Web)
+=======
 
 | 구분                                  | url               | method | parameter                            | response      |
 | ------------------------------------- | ----------------- | ------ | ------------------------------------ | ------------- |
@@ -97,9 +123,20 @@
 | 퀴즈 등록 페이지   | /admin/quiz   | GET    |                                                            | Result                      |
 | 퀴즈 배경화면 버튼 |               |        |                                                            | Result                      |
 | 퀴즈 등록 버튼     | /admin/quiz   | POST   | Pin_id, title, contents, answer, tags, latitude, longitude | Result                      |
+>>>>>>> fb0b3446d7ffbbde19f1212c34dc599a91cf2deb
 
+| 구분               | url | method | parameter | response |
+| ------------------ | --- | ------ | --------- | -------- |
+| Admin 페이지       |     | GET    |           |          |
+| 퀴즈 수정 페이지   |     | GET    |           |          |
+| 퀴즈 수정 버튼     |     | POST   |           |          |
+| 퀴즈 등록 페이지   |     | GET    |           |          |
+| 퀴즈 배경화면 버튼 |     |        |           |          |
+| 퀴즈 등록 버튼     |     | POST   |           |          |
+
+<<<<<<< HEAD
 # DB 구조
-
+=======
 * users
   * id
   * password
@@ -115,3 +152,4 @@
   * Tags
   * Latitude
   * Logitude
+>>>>>>> fb0b3446d7ffbbde19f1212c34dc599a91cf2deb
