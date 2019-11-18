@@ -6,8 +6,10 @@ export default function CreateQuiz() {
       <h1>Create Quiz</h1>
       <hr />
       <form>
+        <view>Quiz Title.</view>
         <input type="text" />
         <hr />
+        <view>Quiz Title.</view>
         <input type="text" />
         <hr />
         <input type="text" />
