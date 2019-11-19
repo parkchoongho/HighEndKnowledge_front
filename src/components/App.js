@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Nav from "./Nav";
@@ -11,12 +11,21 @@ import Join from "./Join";
 // import Quiz from "./Quiz";
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const auth = { isLoggedIn, isAdmin, setIsLoggedIn, setIsAdmin };
+
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav {...auth} />
       <Header />
       <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
+      <Route
+        exact
+        path="/login"
+        render={props => <Login {...props} {...auth} />}
+      />
       <Route exact path="/join" component={Join} />
       <Route path="/createQuiz" component={CreateQuiz} />
       {/* <Route path="/:id" component={Quiz} /> */}

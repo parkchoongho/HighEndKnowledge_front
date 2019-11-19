@@ -12,6 +12,8 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
       password: e.target.password.value
     });
 
+    console.log(data);
+
     if (!data.result) {
       setLoginState("failed");
     } else {

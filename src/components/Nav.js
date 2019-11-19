@@ -1,7 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import getCookie from "../common/getCookie";
 
-export default function Nav() {
+export default function Nav({
+  isLoggedIn,
+  setIsLoggedIn,
+  isAdmin,
+  setIsAdmin
+}) {
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+
+  const logout = () => {
+    document.cookie = `Authorization=; expires=${new Date().toUTCString()}`;
+    setIsLoggedIn(false);
+    setIsAdmin(false);
+  };
+  useEffect(() => {
+    setIsLoggedIn(document.cookie.includes("Authorization"));
+    if (document.cookie.includes("Authorization")) {
+      // Cookie 값에서 Admin 정보 뽑아내기
+      const jwt = getCookie("Authorization").split(" ")[1];
+      const payload = jwt.split(".")[1];
+      // 해시 값을 Parse
+      const { admin } = JSON.parse(atob(payload));
+      setIsAdmin(admin);
+    }
+  }, []);
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light fixed-top"
@@ -19,27 +45,63 @@ export default function Nav() {
           aria-controls="navbarResponsive"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={() => {
+            setIsCollapsed(!isCollapsed);
+            setIsMenuOpened(!isMenuOpened);
+          }}
         >
           Menu
           <i className="fas fa-bars"></i>
         </button>
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onClick={() => {
+                if (isMenuOpened) {
+                  setIsCollapsed(!isCollapsed);
+                  setIsMenuOpened(!isMenuOpened);
+                }
+              }}
+            >
               <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
+            <li
+              className="nav-item"
+              onClick={() => {
+                if (isMenuOpened) {
+                  setIsCollapsed(!isCollapsed);
+                  setIsMenuOpened(!isMenuOpened);
+                }
+              }}
+            >
+              {isLoggedIn ? (
+                <a className="nav-link" onClick={logout}>
+                  Logout
+                </a>
+              ) : (
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              )}
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/createQuiz">
-                Create Quiz
-              </Link>
-            </li>
+            {isAdmin && (
+              <li
+                className="nav-item"
+                onClick={() => {
+                  if (isMenuOpened) {
+                    setIsCollapsed(!isCollapsed);
+                    setIsMenuOpened(!isMenuOpened);
+                  }
+                }}
+              >
+                <Link className="nav-link" to="/createQuiz">
+                  Create Quiz
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>
