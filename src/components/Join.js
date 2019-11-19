@@ -4,7 +4,6 @@ import { Redirect } from "react-router-dom";
 import { baseURL } from "../common/config";
 
 export default function Join() {
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [isPasswordSame, setIsPasswordSame] = useState(false);
@@ -17,12 +16,14 @@ export default function Join() {
       alert("Password Check. plz/");
       return;
     }
+
     if (password.length < 3 || password2.length < 3) {
       alert("Password Length is short! 3~30word plz");
       return;
     }
+
     if (
-      !e.target.Name.value ||
+      !e.target.name.value ||
       !password ||
       !password2 ||
       !e.target.birth.value ||
@@ -31,8 +32,9 @@ export default function Join() {
       alert("모든 필드를 채워야합니다.");
       return;
     }
+
     const { data } = await axios.post(`${baseURL}/auth/join`, {
-      name: e.target.Name.value,
+      name: e.target.name.value,
       password,
       birth: e.target.birth.value,
       gender: e.target.gender.value
@@ -53,7 +55,7 @@ export default function Join() {
           <input
             type="text"
             className="form-control"
-            name="Name"
+            name="name"
             placeholder="Use Name(ID)"
           />
         </div>
