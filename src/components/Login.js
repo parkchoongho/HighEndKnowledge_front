@@ -8,7 +8,7 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
   const handleSubmit = async e => {
     e.preventDefault();
     const { data } = await axios.post(`${baseURL}/auth/login`, {
-      email: e.target.email.value,
+      name: e.target.name.value,
       password: e.target.password.value
     });
 
@@ -31,17 +31,15 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
       {loginState === "success" ? <Redirect to="/" /> : null}
       <form onSubmit={handleSubmit}>
         <small>
-          {loginState === "failed" && "이메일 혹은 비밀번호를 확인하세요."}
+          {loginState === "failed" && "이름(ID) 혹은 비밀번호를 확인하세요."}
         </small>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Name(ID)</label>
           <input
-            type="email"
+            type="text"
             className="form-control"
-            id="exampleInputEmail1"
-            name="email"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
+            name="name"
+            placeholder="Enter Name(ID)"
           />
         </div>
         <div className="form-group">
@@ -49,7 +47,6 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
           <input
             type="password"
             className="form-control"
-            id="exampleInputPassword1"
             name="password"
             placeholder="Password"
           />

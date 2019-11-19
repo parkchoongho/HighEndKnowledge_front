@@ -55,16 +55,6 @@ export default function CreateQuiz() {
             <option value="지리">지리</option>
             <option value="게임">게임</option>
           </select>
-          <select style={style.item3}>
-            <option style={style.undisplay} selected>
-              소분류
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
         </div>
         <hr />
         <div style={style.itemContainer}>
