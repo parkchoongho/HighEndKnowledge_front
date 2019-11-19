@@ -5,5 +5,6 @@ import App from "./components/App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./static/css/clean-blog.min.css";
+import "./static/css/createQuiz.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
