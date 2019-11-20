@@ -63,7 +63,8 @@ export default function CreateQuiz() {
       alert("모든 필드를 채워야합니다.");
       return;
     }
-    const semdata = {
+
+    const { data } = await Authaxios().post(`${baseURL}/admin/quiz`, {
       title: e.target.title.value,
       contents: e.target.contents.value,
       distracter: [
@@ -74,28 +75,10 @@ export default function CreateQuiz() {
       ],
       tags: [e.target.category.value],
       answer: e.target.answer.value,
-      lat: e.target.latitude.value,
-      lon: e.target.longitude.value
-    };
-    console.log(semdata);
-
-    const { data } = await Authaxios().post(`${baseURL}/admin/quiz`, {
-      data: {
-        title: e.target.title.value,
-        contents: e.target.contents.value,
-        distracter: [
-          e.target.select1.value,
-          e.target.select2.value,
-          e.target.select3.value,
-          e.target.select4.value
-        ],
-        tags: [e.target.category.value],
-        answer: e.target.answer.value,
-        lat: e.target.latitude.value,
-        lon: e.target.longitude.value
-      }
+      lat: Number(e.target.latitude.value),
+      lon: Number(e.target.longitude.value)
     });
-    console.log(data);
+
     if (data.result) {
       setQuizResult(true);
     } else {
