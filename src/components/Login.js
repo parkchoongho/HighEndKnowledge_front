@@ -5,14 +5,13 @@ import { baseURL } from "../common/config";
 
 export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
   const [loginState, setLoginState] = useState("init");
+
   const handleSubmit = async e => {
     e.preventDefault();
     const { data } = await axios.post(`${baseURL}/auth/login`, {
       name: e.target.name.value,
       password: e.target.password.value
     });
-
-    console.log(data);
 
     if (!data.result) {
       setLoginState("failed");
