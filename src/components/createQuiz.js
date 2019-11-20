@@ -44,6 +44,21 @@ export default function CreateQuiz() {
   };
 
   const [quizResult, setQuizResult] = useState(false);
+  const [tag, setTag] = useState("");
+  const [tags, setTags] = useState([]);
+
+  const addTag = async e => {
+    e.preventDefault();
+    setTags([...tags, tag]);
+    setTag("");
+  };
+
+  const deleteTag = i => {
+    i.preventDefault();
+    const newTags = [...tags];
+    newTags.splice(i, 1);
+    setTags(newTags);
+  };
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -55,7 +70,7 @@ export default function CreateQuiz() {
       !e.target.select2.value ||
       !e.target.select3.value ||
       !e.target.select4.value ||
-      !e.target.category.value ||
+      !tags ||
       !e.target.answer.value ||
       !e.target.latitude.value ||
       !e.target.longitude.value
@@ -73,7 +88,7 @@ export default function CreateQuiz() {
         e.target.select3.value,
         e.target.select4.value
       ],
-      tags: [e.target.category.value],
+      tags: tags,
       answer: e.target.answer.value,
       lat: Number(e.target.latitude.value),
       lon: Number(e.target.longitude.value)
@@ -95,16 +110,33 @@ export default function CreateQuiz() {
         <form style={style.formContainer} onSubmit={handleSubmit}>
           <div style={style.itemContainer}>
             <h3 style={style.item1}>Quiz Category.</h3>
-            <select style={style.item3} name="category">
-              <option style={style.undisplay} defaultValue>
-                대분류
-              </option>
-              <option value="일반">일반</option>
-              <option value="과학">과학</option>
-              <option value="수학">수학</option>
-              <option value="지리">지리</option>
-              <option value="게임">게임</option>
-            </select>
+            <input
+              type="text"
+              value={tag}
+              name="tag"
+              onChange={e => setTag(e.target.value)}
+              autoFocus
+              style={style.item2}
+              placeholder="추가할 Tag명"
+            />
+            <button
+              className="btn btn-success"
+              style={style.item1}
+              onClick={addTag}
+            >
+              Add Tag
+            </button>
+          </div>
+          <div>
+            {tags.map((tag, i) => (
+              <button
+                className="btn btn-primary"
+                style={style.item1}
+                onClick={() => deleteTag(i)}
+              >
+                {tags[i]}
+              </button>
+            ))}
           </div>
           <hr />
           <div style={style.itemContainer}>
