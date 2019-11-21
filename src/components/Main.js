@@ -1,7 +1,5 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { baseURL } from "../common/config";
-import Authaxios from "../common/authAxios";
 
 export default function Main(quizs, getNextPage) {
   const styles = {
@@ -10,7 +8,7 @@ export default function Main(quizs, getNextPage) {
       flexDirection: "row", // 혹은 'column'
       // alignContent: "center",
       alignItems: "baseline",
-      maxWidth: "90%"
+      maxWidth: "84%"
     },
     item1: {
       flexGrow: 1,
@@ -25,111 +23,30 @@ export default function Main(quizs, getNextPage) {
     }
   };
 
-  // const res = async () => {
-  //   const list = await Authaxios().get(`${baseURL}/admin`);
-  //   // console.log(list.data.allQuizzes[0]);
-  //   const mapList = list.map();
-  //   console.log(mapList);
-  // };
-  // res();
-
   return (
-    <div className="container">
+    <div className="container" style={{ maxWidth: "100%" }}>
       <div className="row">
         <div className="col-lg-8 col-md-10 mx-auto">
           <div className="post-preview">
-            {quizs &&
-              quizs.map(quiz => (
-                <Link
-                  className="nav-link"
-                  to={`/quiz/${quizs._id}`}
-                  style={styles.container}
-                >
+            {quizs.quizs &&
+              quizs.quizs.map((quiz, index) => (
+                <Link className="nav-link" to={`/quiz/${quiz._id}`}>
                   <div style={styles.item1}>
-                    <h2>1</h2>
+                    <h2>{index + 1}. </h2>
                   </div>
                   <div style={styles.item2}>
-                    <h2 className="post-title">Quiz - Title</h2>
-                    <h3 className="post-subtitle">Quiz -</h3>
+                    <h2 className="post-title">{quiz.title}</h2>
+                    <h4 className="post-subtitle">{quiz.contents}</h4>
                     <p className="post-meta">
-                      Quiz ID / Quiz Category / Quiz Date / Latitude, Longitude
-                      /
+                      {quiz.tags} / {quiz.lat} / {quiz.lon}/
                     </p>
                   </div>
                 </Link>
               ))}
-            <hr />
-            <Link
-              className="nav-link"
-              to={`/quiz/${quizs._id}`}
-              style={styles.container}
-            >
-              <div style={styles.item1}>
-                <h2>2</h2>
-              </div>
-              <div style={styles.item2}>
-                <h2 className="post-title">Quiz - Title</h2>
-                <h3 className="post-subtitle">Quiz -</h3>
-                <p className="post-meta">
-                  Quiz ID / Quiz Category / Quiz Date / Latitude, Longitude /
-                </p>
-              </div>
-            </Link>
-            <hr />
-            <Link
-              className="nav-link"
-              to={`/quiz/${quizs._id}`}
-              style={styles.container}
-            >
-              <div style={styles.item1}>
-                <h2>3</h2>
-              </div>
-              <div style={styles.item2}>
-                <h2 className="post-title">Quiz - Title</h2>
-                <h3 className="post-subtitle">Quiz -</h3>
-                <p className="post-meta">
-                  Quiz ID / Quiz Category / Quiz Date / Latitude, Longitude /
-                </p>
-              </div>
-            </Link>
-            <hr />
-            <Link
-              className="nav-link"
-              to={`/quiz/${quizs._id}`}
-              style={styles.container}
-            >
-              <div style={styles.item1}>
-                <h2>4</h2>
-              </div>
-              <div style={styles.item2}>
-                <h2 className="post-title">Quiz - Title</h2>
-                <h3 className="post-subtitle">Quiz -</h3>
-                <p className="post-meta">
-                  Quiz ID / Quiz Category / Quiz Date / Latitude, Longitude /
-                </p>
-              </div>
-            </Link>
-            <hr />
-            <Link
-              className="nav-link"
-              to={`/quiz/${quizs._id}`}
-              style={styles.container}
-            >
-              <div style={styles.item1}>
-                <h2>5</h2>
-              </div>
-              <div style={styles.item2}>
-                <h2 className="post-title">Quiz - Title</h2>
-                <h3 className="post-subtitle">Quiz -</h3>
-                <p className="post-meta">
-                  Quiz ID / Quiz Category / Quiz Date / Latitude, Longitude /
-                </p>
-              </div>
-            </Link>
           </div>
           <hr />
-
           <div className="clearfix">
+            <h2 className="copyright"> 1 2 3 4 5</h2>
             <button
               type="button"
               className="btn btn-primary float-right"

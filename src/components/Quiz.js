@@ -1,10 +1,9 @@
-import React from "react";
-import { match } from "react-router-dom";
+import React, { useState } from "react";
 
-export default function Quiz(match) {
+export default function Quiz() {
   return (
     <>
-      <h2>Quiz info {match.params}</h2>
+      <h2>Quiz info </h2>
     </>
   );
 }
