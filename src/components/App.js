@@ -8,7 +8,7 @@ import CreateQuiz from "./createQuiz";
 import Footer from "./Footer";
 import Login from "./Login";
 import Join from "./Join";
-// import Quiz from "./Quiz";
+import Quiz from "./Quiz";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,7 +28,7 @@ export default function App() {
       />
       <Route exact path="/join" component={Join} />
       <Route path="/createQuiz" component={CreateQuiz} />
-      {/* <Route path="/:id" component={Quiz} /> */}
+      <Route path="/:id" component={Quiz} />
       <Footer />
     </BrowserRouter>
   );
