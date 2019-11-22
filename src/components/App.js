@@ -13,8 +13,16 @@ import Quiz from "./QuizInfo";
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isLogout, setIsLogout] = useState(false);
 
-  const auth = { isLoggedIn, isAdmin, setIsLoggedIn, setIsAdmin };
+  const auth = {
+    isLoggedIn,
+    isAdmin,
+    setIsLoggedIn,
+    setIsAdmin,
+    isLogout,
+    setIsLogout
+  };
 
   return (
     <BrowserRouter>

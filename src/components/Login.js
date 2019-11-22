@@ -3,7 +3,13 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { baseURL } from "../common/config";
 
-export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
+export default function Login({
+  setIsLoggedIn,
+  setIsAdmin,
+  history,
+  isLogout,
+  setIsLogout
+}) {
   const [loginState, setLoginState] = useState("init");
 
   const handleSubmit = async e => {
@@ -24,6 +30,7 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
       setIsAdmin(data.admin);
       setIsLoggedIn(true);
       setLoginState("success");
+      setIsLogout(false);
     }
   };
 
