@@ -1,35 +1,38 @@
 .formContainer {
-  display: "flex";
-  flex-direction: "column";
-  padding: "20px 40px 20px 40px";
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px 20px 40px;
 }
 .itemContainer {
-  display: "inline-flex";
-  flex-direction: "row";
-  align-items: "center";
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
 }
 .item1 {
   flex-grow: 1;
-  align-items: "flex-start";
+  align-items: flex-start;
   flex-shrink: 1;
-  margin-right: "10px";
+  margin-right: 10px;
 }
 
 .item2 {
   flex-grow: 4;
-  margin: "0 50px 0 50px";
+  margin: 0 50px 0 50px;
 }
 .item3 {
   flex-grow: 2;
-  max-width: "100px";
-  margin: "0 100px 0 100px";
+  max-width: 100px;
+  margin: 0 100px 0 100px;
 }
 .title {
-  text-align: "left";
+  text-align: left;
 }
 .undisplay {
-  display: "none";
+  display: none;
 }
 .btnSubmit {
-  max-width: "20%";
+  max-width: 20%;
+}
+.btnBorderColor {
+  border-color: red;
 }
