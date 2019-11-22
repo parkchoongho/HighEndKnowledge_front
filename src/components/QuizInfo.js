@@ -94,7 +94,7 @@ export default function Quiz() {
 
   return (
     <>
-      {quizResult && <Redirect to="/createquiz" />}
+      {quizResult && <Redirect to="/" />}
       <div className="caption">
         <h1 className="title">Modify Quiz</h1>
         <hr />
@@ -218,7 +218,7 @@ export default function Quiz() {
           </div>
           <div>
             <button type="submit" className="btnBorderColor btn btnSubmit ">
-              Submit
+              Send
             </button>
           </div>
         </form>

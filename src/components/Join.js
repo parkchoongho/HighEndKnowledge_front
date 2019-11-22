@@ -56,6 +56,7 @@ export default function Join() {
             type="text"
             className="form-control"
             name="name"
+            autoFocus
             placeholder="Use Name(ID)"
           />
         </div>

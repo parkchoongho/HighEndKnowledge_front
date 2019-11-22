@@ -40,6 +40,12 @@ export default function CreateQuiz() {
     },
     btnSubmit: {
       maxWidth: "20%"
+    },
+    tagbtn: {
+      padding: "5px 5px 5px 5px",
+      width: "100px",
+      borderRadius: "15%",
+      margin: "0 5px 0 5px"
     }
   };
 
@@ -103,7 +109,7 @@ export default function CreateQuiz() {
 
   return (
     <>
-      {quizResult && <Redirect to="/createquiz" />}
+      {quizResult && <Redirect to="/" />}
       <div className="caption" style={style.fromMargin}>
         <h1 style={style.title}>Create Quiz</h1>
         <hr />
@@ -121,7 +127,7 @@ export default function CreateQuiz() {
             />
             <button
               className="btn btn-success"
-              style={style.item1}
+              style={(style.item1, style.tagbtn)}
               onClick={addTag}
             >
               Add Tag
@@ -131,7 +137,7 @@ export default function CreateQuiz() {
             {tags.map((tag, i) => (
               <button
                 className="btn btn-primary"
-                style={style.item1}
+                style={(style.item1, style.tagbtn)}
                 onClick={() => deleteTag(i)}
               >
                 {tags[i]}
@@ -205,7 +211,7 @@ export default function CreateQuiz() {
             className="btn btn-primary"
             style={style.btnSubmit}
           >
-            Submit
+            Send
           </button>
         </form>
         <hr />
