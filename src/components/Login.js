@@ -40,6 +40,7 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
             type="text"
             className="form-control"
             name="name"
+            autoFocus
             placeholder="Enter Name(ID)"
           />
         </div>
@@ -53,7 +54,7 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+          Login
         </button>
         <button
           type="button"
