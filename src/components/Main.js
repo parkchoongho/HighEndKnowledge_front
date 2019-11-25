@@ -13,7 +13,7 @@ export default function Main(quizs, getNextPage) {
             <div className="post-preview">
               {quizs.quizs &&
                 quizs.quizs.map((quiz, index) => (
-                  <Link className="nav-link" to={`/quiz/${quiz._id}`}>
+                  <Link className="nav-link" to={`/solve/${quiz._id}`}>
                     <div className="item1">
                       <h2>{index + 1}. </h2>
                     </div>
