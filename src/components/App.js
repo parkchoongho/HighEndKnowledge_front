@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Header from "./Header";
 import Home from "./Home";
+import adminHome from "./adminHome";
 import CreateQuiz from "./createQuiz";
 import Footer from "./Footer";
 import Login from "./Login";
@@ -14,6 +15,7 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
+  const [headerState, setHeaderState] = useState(false);
 
   const auth = {
     isLoggedIn,
@@ -21,19 +23,18 @@ export default function App() {
     setIsLoggedIn,
     setIsAdmin,
     isLogout,
-    setIsLogout
+    setIsLogout,
+    headerState,
+    setHeaderState
   };
 
   return (
     <BrowserRouter>
       <Nav {...auth} />
-      <Header />
-      <Route exact path="/" component={Home} />
-      <Route
-        exact
-        path="/login"
-        render={props => <Login {...props} {...auth} />}
-      />
+      <Header headerState={headerState} />
+      <Route exact path="/" render={props => <Login {...props} {...auth} />} />
+      <Route exact path="/home" component={Home} />
+      <Route exact path="/admin/home" component={adminHome} />
       <Route exact path="/join" component={Join} />
       <Route path="/createQuiz" component={CreateQuiz} />
       <Route path="/quiz/:id" component={Quiz} />

@@ -48,7 +48,7 @@ export default function Join() {
 
   return (
     <>
-      {joinResult && <Redirect to="/login" />}
+      {joinResult && <Redirect to="/" />}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name</label>
