@@ -31,7 +31,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Nav {...auth} />
-      <Header headerState={headerState} />
+      <Header headerState={headerState} isAdmin={isAdmin} />
       <Route exact path="/" render={props => <Login {...props} {...auth} />} />
       <Route exact path="/home" component={Home} />
       <Route exact path="/admin/home" component={adminHome} />

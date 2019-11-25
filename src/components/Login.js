@@ -33,8 +33,9 @@ export default function Login({
       setIsLoggedIn(true);
       setLoginState("success");
       setIsLogout(false);
-      setHeaderState(true);
+      setHeaderState(false);
     }
+    if (data.admin) setHeaderState(true);
   };
 
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 import HomeBg from "../static/img/quizBackground.jpeg";
 
-export default function Header(headerState, setHeaderState) {
+export default function Header({ headerState, isAdmin }) {
   return (
     <>
-      {!headerState ? (
+      {headerState && isAdmin ? (
         <header
           className="masthead"
           style={{ backgroundImage: `url(${HomeBg})` }}
