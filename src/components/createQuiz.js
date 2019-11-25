@@ -60,7 +60,6 @@ export default function CreateQuiz() {
   };
 
   const deleteTag = i => {
-    i.preventDefault();
     const newTags = [...tags];
     newTags.splice(i, 1);
     setTags(newTags);
@@ -109,7 +108,7 @@ export default function CreateQuiz() {
 
   return (
     <>
-      {quizResult && <Redirect to="/" />}
+      {quizResult && <Redirect to="/admin/home" />}
       <div className="caption" style={style.fromMargin}>
         <h1 style={style.title}>Create Quiz</h1>
         <hr />
@@ -123,7 +122,7 @@ export default function CreateQuiz() {
               onChange={e => setTag(e.target.value)}
               autoFocus
               style={style.item2}
-              placeholder="추가할 Tag명"
+              placeholder="추가할 Tag명 4자까지"
             />
             <button
               className="btn btn-success"

@@ -8,7 +8,9 @@ export default function Login({
   setIsAdmin,
   history,
   isLogout,
-  setIsLogout
+  setIsLogout,
+  headerState,
+  setHeaderState
 }) {
   const [loginState, setLoginState] = useState("init");
 
@@ -31,12 +33,13 @@ export default function Login({
       setIsLoggedIn(true);
       setLoginState("success");
       setIsLogout(false);
+      setHeaderState(true);
     }
   };
 
   return (
     <>
-      {loginState === "success" ? <Redirect to="/" /> : null}
+      {loginState === "success" ? <Redirect to="/home" /> : null}
       <form onSubmit={handleSubmit}>
         <small>
           {loginState === "failed" && "이름(ID) 혹은 비밀번호를 확인하세요."}

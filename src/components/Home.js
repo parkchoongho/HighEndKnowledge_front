@@ -8,8 +8,9 @@ export default function App() {
   const [page, setPage] = useState(1);
 
   const getQuizs = async (p = 1) => {
-    const url = `${baseURL}/admin?page=${p}`;
+    const url = `${baseURL}/api/quiz?page=${p}`;
     const { data } = await Authaxios().get(url);
+    console.log(data);
     setQuizs(data.allQuizzes);
   };
   const getNextPage = async () => {

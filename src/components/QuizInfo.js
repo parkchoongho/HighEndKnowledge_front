@@ -88,13 +88,20 @@ export default function Quiz() {
     setSelect4(info.distracter[3]);
   };
 
+  const quizDelete = async () => {
+    const { data } = await Authaxios().delete(
+      `${baseURL}/admin/delete/${document.location.href.split("/")[4]}`
+    );
+    setQuizResult(true);
+  };
+
   useEffect(() => {
     getQuizInfo();
   }, []);
 
   return (
     <>
-      {quizResult && <Redirect to="/" />}
+      {quizResult && <Redirect to="/admin/home" />}
       <div className="caption">
         <h1 className="title">Modify Quiz</h1>
         <hr />
@@ -217,8 +224,15 @@ export default function Quiz() {
             />
           </div>
           <div>
-            <button type="submit" className="btnBorderColor btn btnSubmit ">
-              Send
+            <button type="submit" className="btnBorderColor btn btnSubmit">
+              Edit
+            </button>
+            <button
+              type="button"
+              className="btnBorderColor btn btnSubmit"
+              onClick={quizDelete}
+            >
+              Delete
             </button>
           </div>
         </form>
