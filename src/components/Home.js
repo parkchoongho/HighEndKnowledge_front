@@ -10,7 +10,6 @@ export default function App() {
   const getQuizs = async (p = 1) => {
     const url = `${baseURL}/api/quiz?page=${p}`;
     const { data } = await Authaxios().get(url);
-    console.log(data);
     setQuizs(data.allQuizzes);
   };
   const getNextPage = async () => {
