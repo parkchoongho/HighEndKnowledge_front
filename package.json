@@ -37,9 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://Heeja.github.io/HighEndKnowledge_front",
-  "devDependencies": {
-    "gh-pages": "^2.1.1"
   }
 }

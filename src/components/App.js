@@ -33,7 +33,17 @@ export default function App() {
     <BrowserRouter>
       <Nav {...auth} />
       <Header headerState={headerState} isAdmin={isAdmin} />
-      <Route exact path="/" render={props => <Login {...props} {...auth} />} />
+      <Route
+        exact
+        path="/"
+        render={props =>
+          isLoggedIn ? (
+            <Route exact path="/home" component={Home} />
+          ) : (
+            <Login {...props} {...auth} />
+          )
+        }
+      />
       <Route exact path="/home" component={Home} />
       <Route exact path="/admin/home" component={adminHome} />
       <Route exact path="/join" component={Join} />
