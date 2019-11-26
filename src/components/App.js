@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import Login from "./Login";
 import Join from "./Join";
 import Quiz from "./QuizInfo";
+import Solve from "./Solve";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,6 +39,7 @@ export default function App() {
       <Route exact path="/join" component={Join} />
       <Route path="/createQuiz" component={CreateQuiz} />
       <Route path="/quiz/:id" component={Quiz} />
+      <Route path="/solve/:id" component={Solve} />
       <Footer isAdmin={isAdmin} />
     </BrowserRouter>
   );
