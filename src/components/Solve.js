@@ -80,9 +80,9 @@ class Solve extends Component {
             </form>
           </div>
         ) : ansState === 1 ? (
-          <div>맞았습니다.</div>
+          <Redirect to="/success" />
         ) : (
-          <div>틀렸습니다.</div>
+          <Redirect to="/fail" />
         )}
       </>
     );

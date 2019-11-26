@@ -11,6 +11,8 @@ import Login from "./Login";
 import Join from "./Join";
 import Quiz from "./QuizInfo";
 import Solve from "./Solve";
+import Success from "./Success";
+import Fail from "./Fail";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,6 +52,8 @@ export default function App() {
       <Route path="/createQuiz" component={CreateQuiz} />
       <Route path="/quiz/:id" component={Quiz} />
       <Route path="/solve/:id" component={Solve} />
+      <Route path="/success" component={Success} />
+      <Route path="/fail" component={Fail} />
       <Footer isAdmin={isAdmin} />
     </BrowserRouter>
   );
