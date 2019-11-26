@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import "../static/css/animationText.css";
 
 export default function Main(quizs, getNextPage) {
-  console.log(Screen.width);
   return (
     <>
       <h1

@@ -4,7 +4,7 @@ import HomeBg from "../static/img/quizBackground.jpeg";
 export default function Header({ headerState, isAdmin }) {
   return (
     <>
-      {headerState && isAdmin ? (
+      {isAdmin ? (
         <header
           className="masthead"
           style={{ backgroundImage: `url(${HomeBg})` }}
