@@ -4,19 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import "../static/css/animationText.css";
 
 export default function Main(quizs, getNextPage) {
-  // const setup = () => {
-  //   var e = document.getElementById("watchme");
-  //   e.addEventListener("animationstart", listener, false);
-  //   e.addEventListener("animationend", listener, false);
-  //   e.addEventListener("animationiteration", listener, false);
-
-  //   var e = document.getElementById("watchme");
-  //   e.className = "slidein";
-  // };
-
-  // useEffect(() => {
-  //   setup();
-  // }, []);
+  console.log(Screen.width);
   return (
     <>
       <h1
@@ -34,11 +22,10 @@ export default function Main(quizs, getNextPage) {
                   1}`}
                 to={`/solve/${quiz._id}`}
               >
-                <h5>{index + 1 + "."}</h5>
-                <h3 className="post-title quiz-text">{quiz.title}</h3>
-                <h5 className="post-subtitle quiz-text">{quiz.contents}</h5>
-                <p className="post-meta quiz-text">
-                  {quiz.tags.map(t => t + " ")}
+                <h5 className="media-index">{index + 1 + ". "}</h5>
+                <h3 className="post-title media-h3">{quiz.title}</h3>
+                <p className="post-meta quiz-text media-tag">
+                  {quiz.tags.map(t => "#" + t + " ")}
                 </p>
               </Link>
             ))}
