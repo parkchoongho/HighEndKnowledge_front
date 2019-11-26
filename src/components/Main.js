@@ -30,22 +30,14 @@ export default function Main(quizs, getNextPage) {
           {quizs.quizs &&
             quizs.quizs.map((quiz, index) => (
               <Link
-                className={`nav-link tracking-in-expand-fwd quiz-border quizs-size div${index +
+                className={`nav-link tracking-in-expand-fwd quiz-border quizs-size quiz-text div${index +
                   1}`}
                 to={`/solve/${quiz._id}`}
               >
-                <div>
-                  <div className={`div${index + 1}`}>
-                    <h2>{index + 1}. </h2>
-                  </div>
-                  <div>
-                    <h2 className="post-title quiz-text">{quiz.title}</h2>
-                    <h4 className="post-subtitle quiz-text">{quiz.contents}</h4>
-                    <p className="post-meta quiz-text">
-                      {quiz.tags.map(t => t + " ")}
-                    </p>
-                  </div>
-                </div>
+                <h2>{index + 1}. </h2>
+                <h2 className="post-title">{quiz.title}</h2>
+                <h4 className="post-subtitle">{quiz.contents}</h4>
+                <p className="post-meta">{quiz.tags.map(t => t + " ")}</p>
               </Link>
             ))}
         </div>

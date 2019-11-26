@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://heeja.react.hek --profile=heeja"
+    "aws-deploy": "aws s3 sync ./build s3://heeja.react.hek --profile=heeja",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "homepage": "Heeja.github.io/HighEndKnowledge_front",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
