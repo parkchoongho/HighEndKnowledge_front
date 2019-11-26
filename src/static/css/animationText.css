@@ -115,7 +115,7 @@
 }
 
 .quiz-border {
-  border: 1px;
+  border: 2px;
   border-color: rgb(255, 227, 148);
   border-style: solid;
   border-radius: 30%;
@@ -137,8 +137,8 @@
 }
 
 .quiz-text {
-  word-break: break-all;
+  word-break: break-word;
   text-overflow: ellipsis;
-  white-space: pre-wrap;
+  white-space: nowrap;
   overflow: hidden;
 }
