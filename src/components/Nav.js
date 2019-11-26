@@ -34,7 +34,6 @@ export default function Nav({
       const { admin } = JSON.parse(atob(payload));
       setIsAdmin(admin);
     }
-    console.log(isAdmin);
   }, []);
 
   return (

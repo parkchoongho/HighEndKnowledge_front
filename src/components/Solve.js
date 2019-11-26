@@ -29,7 +29,6 @@ class Solve extends Component {
       `${baseURL}/api/quiz/${document.location.href.split("/")[4]}`,
       { selectAns: this.state.answer }
     );
-    console.log(data);
   };
 
   componentDidMount() {
