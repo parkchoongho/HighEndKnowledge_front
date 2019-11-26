@@ -30,8 +30,6 @@ class Solve extends Component {
       `${baseURL}/api/quiz/${document.location.href.split("/")[4]}`,
       { selectAns: this.state.answer }
     );
-    // console.log(res.data);
-    alert(res.data.msg);
 
     if (res.data.result) {
       this.setState({ ansState: 1 });
