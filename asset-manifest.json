@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "Heeja.github.io/HighEndKnowledge_front/static/css/main.8151c955.chunk.css",
+    "main.js": "Heeja.github.io/HighEndKnowledge_front/static/js/main.784398a9.chunk.js",
+    "main.js.map": "Heeja.github.io/HighEndKnowledge_front/static/js/main.784398a9.chunk.js.map",
+    "runtime-main.js": "Heeja.github.io/HighEndKnowledge_front/static/js/runtime-main.bcbf5a8f.js",
+    "runtime-main.js.map": "Heeja.github.io/HighEndKnowledge_front/static/js/runtime-main.bcbf5a8f.js.map",
+    "static/css/2.a07d2a01.chunk.css": "Heeja.github.io/HighEndKnowledge_front/static/css/2.a07d2a01.chunk.css",
+    "static/js/2.04afa9cf.chunk.js": "Heeja.github.io/HighEndKnowledge_front/static/js/2.04afa9cf.chunk.js",
+    "static/js/2.04afa9cf.chunk.js.map": "Heeja.github.io/HighEndKnowledge_front/static/js/2.04afa9cf.chunk.js.map",
+    "index.html": "Heeja.github.io/HighEndKnowledge_front/index.html",
+    "precache-manifest.b2096e857eb68393149bf97895523c00.js": "Heeja.github.io/HighEndKnowledge_front/precache-manifest.b2096e857eb68393149bf97895523c00.js",
+    "service-worker.js": "Heeja.github.io/HighEndKnowledge_front/service-worker.js",
+    "static/css/2.a07d2a01.chunk.css.map": "Heeja.github.io/HighEndKnowledge_front/static/css/2.a07d2a01.chunk.css.map",
+    "static/css/main.8151c955.chunk.css.map": "Heeja.github.io/HighEndKnowledge_front/static/css/main.8151c955.chunk.css.map",
+    "static/media/all.min.css": "Heeja.github.io/HighEndKnowledge_front/static/media/fa-solid-900.c2801fb4.svg",
+    "static/media/quizBackground.jpeg": "Heeja.github.io/HighEndKnowledge_front/static/media/quizBackground.71982900.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bcbf5a8f.js",
+    "static/css/2.a07d2a01.chunk.css",
+    "static/js/2.04afa9cf.chunk.js",
+    "static/css/main.8151c955.chunk.css",
+    "static/js/main.784398a9.chunk.js"
+  ]
+}
