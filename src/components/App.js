@@ -38,7 +38,7 @@ export default function App() {
       <Route exact path="/join" component={Join} />
       <Route path="/createQuiz" component={CreateQuiz} />
       <Route path="/quiz/:id" component={Quiz} />
-      <Footer />
+      <Footer isAdmin={isAdmin} />
     </BrowserRouter>
   );
 }

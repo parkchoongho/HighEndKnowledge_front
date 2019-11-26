@@ -1,8 +1,10 @@
 import React from "react";
 
-export default function Footer() {
+import "../static/css/animationText.css";
+
+export default function Footer({ isAdmin }) {
   return (
-    <footer>
+    <footer className="footer-position">
       <div className="container">
         <div className="row">
           <div className="col-lg-8 col-md-10 mx-auto">
@@ -32,7 +34,9 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <p className="copyright text-muted">&#128818; HNK. Admin Page.</p>
+            <p className="copyright text-muted tracking-in-expand-fwd">
+              &#128818; HNK. {isAdmin ? "Admin Page." : "Copyright"}
+            </p>
           </div>
         </div>
       </div>
