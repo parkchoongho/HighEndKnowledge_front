@@ -10,7 +10,8 @@ class Solve extends Component {
     contents: "",
     distracter: [],
     tags: [],
-    answer: ""
+    answer: "",
+    ansState: 0
   };
   getQuiz = async () => {
     const {
@@ -25,25 +26,39 @@ class Solve extends Component {
   };
   handleSolve = async e => {
     e.preventDefault();
-    const data = await Authaxios().post(
+    const res = await Authaxios().post(
       `${baseURL}/api/quiz/${document.location.href.split("/")[4]}`,
       { selectAns: this.state.answer }
     );
-    console.log(data);
+    // console.log(res.data);
+    alert(res.data.msg);
+
+    if (res.data.result) {
+      this.setState({ ansState: 1 });
+    } else {
+      this.setState({ ansState: 2 });
+    }
   };
 
   componentDidMount() {
     this.getQuiz();
   }
   render() {
-    const { title, contents, distracter, isLoading, tags } = this.state;
+    const {
+      title,
+      contents,
+      distracter,
+      isLoading,
+      tags,
+      ansState
+    } = this.state;
     return (
       <>
         {isLoading ? (
           <div className="loader">
             <span className="loader__text">Loading...</span>
           </div>
-        ) : (
+        ) : ansState === 0 ? (
           <div>
             <h1>{title}</h1>
             {tags.map(tag => (
@@ -66,6 +81,10 @@ class Solve extends Component {
               <input type="submit" value="Submit"></input>
             </form>
           </div>
+        ) : ansState === 1 ? (
+          <div>맞았습니다.</div>
+        ) : (
+          <div>틀렸습니다.</div>
         )}
       </>
     );
