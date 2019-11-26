@@ -34,6 +34,7 @@ export default function Nav({
       const { admin } = JSON.parse(atob(payload));
       setIsAdmin(admin);
     }
+    console.log(isAdmin);
   }, []);
 
   return (
@@ -42,7 +43,7 @@ export default function Nav({
       <nav
         className="navbar navbar-expand-lg navbar-light fixed-top"
         id="mainNav"
-        style={!headerState ? { display: "contents" } : null}
+        style={!headerState && !isAdmin ? { display: "contents" } : null}
       >
         <div className="container">
           <a
