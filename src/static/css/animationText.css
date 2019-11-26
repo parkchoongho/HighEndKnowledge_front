@@ -64,7 +64,7 @@
 .body-container {
   align-content: center;
   width: 80%;
-  height: 90vh;
+  height: 68vh;
   padding: 0;
   margin: 0;
   /* background: #5f83b9;
@@ -82,6 +82,8 @@
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 3px;
+  justify-items: center;
+  text-align: center;
 }
 
 .div1 {
@@ -122,14 +124,21 @@
 .quizs-size {
   width: 80%;
   height: 20vh;
-  /* text-overflow: ellipsis; */
 }
 
 .parent-body-flex {
   display: flex;
   justify-content: center;
+  margin: 2vh 10vh 2vh 10vh;
 }
 
 .footer-position {
   display: block;
+}
+
+.quiz-text {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+  overflow: hidden;
 }
