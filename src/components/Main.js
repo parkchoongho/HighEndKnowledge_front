@@ -4,19 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import "../static/css/animationText.css";
 
 export default function Main(quizs, getNextPage) {
-  // const setup = () => {
-  //   var e = document.getElementById("watchme");
-  //   e.addEventListener("animationstart", listener, false);
-  //   e.addEventListener("animationend", listener, false);
-  //   e.addEventListener("animationiteration", listener, false);
-
-  //   var e = document.getElementById("watchme");
-  //   e.className = "slidein";
-  // };
-
-  // useEffect(() => {
-  //   setup();
-  // }, []);
+  console.log(Screen.width);
   return (
     <>
       <h1
@@ -30,14 +18,15 @@ export default function Main(quizs, getNextPage) {
           {quizs.quizs &&
             quizs.quizs.map((quiz, index) => (
               <Link
-                className={`nav-link tracking-in-expand-fwd quiz-border quizs-size quiz-text div${index +
+                className={`nav-link tracking-in-expand-fwd quiz-border quizs-size div${index +
                   1}`}
                 to={`/solve/${quiz._id}`}
               >
-                <h2>{index + 1}. </h2>
-                <h2 className="post-title">{quiz.title}</h2>
-                <h4 className="post-subtitle">{quiz.contents}</h4>
-                <p className="post-meta">{quiz.tags.map(t => t + " ")}</p>
+                <h5 className="media-index">{index + 1 + ". "}</h5>
+                <h3 className="post-title media-h3">{quiz.title}</h3>
+                <p className="post-meta quiz-text media-tag">
+                  {quiz.tags.map(t => "#" + t + " ")}
+                </p>
               </Link>
             ))}
         </div>
